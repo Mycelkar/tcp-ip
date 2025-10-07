@@ -17,7 +17,7 @@ add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 include_directories(
         ${PROJECT_SOURCE_DIR}
         ${PROJECT_SOURCE_DIR}/npcap/Include          # pcap路径
-        ${PROJECT_SOURCE_DIR}/src/net/net 
+        ${PROJECT_SOURCE_DIR}/src/net/net
         ${PROJECT_SOURCE_DIR}/src/plat
         ${PROJECT_SOURCE_DIR}/src/app
 )
@@ -26,9 +26,7 @@ include_directories(
 file(GLOB_RECURSE SOURCE_LIST "src/*.c" "src/*.h")
 
 # 将源文件列表加入到工程中
-add_executable(${PROJECT_NAME} ${SOURCE_LIST}
-        src/app/echo/tcp_echo_client.h
-        src/app/echo/tcp_echo_client.c)
+add_executable(${PROJECT_NAME} ${SOURCE_LIST})
 
 # 与一些库进行编译链接，生成最终的程序
 # 针对网络的平台配置
