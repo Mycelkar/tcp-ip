@@ -3,7 +3,7 @@
 #include "netif_pcap.h"
 #include "dbg.h"
 #include "nlist.h"
-
+#include "mblock.h"
 #define DBG_TEST DBG_LEVEL_ERROR
 
 net_err_t netdev_init (void) {
@@ -62,6 +62,13 @@ void basic_test(){
     nlist_test();
 }
 
+
+void mblock_test(){
+    mblock_t blist;
+    static uint8_t buffer[100][10];
+
+    mblock_init(&blist,buffer,100,10,NLOCKER_THREAD);
+}
 int main (void) {
 
     net_init();

@@ -1,0 +1,30 @@
+#ifndef NET_NLOCKER_H
+#define NET_NLOCKER_H
+
+#include "sys_plat.h"
+#include "net_err.h"
+
+typedef enum _nlocker_type_t{
+    NLOCKER_NONE,
+    NLOCKER_THREAD,
+}nlocker_type_t;
+
+
+typedef struct _nlocker_t {
+    nlocker_type_t type;
+    union{
+        sys_mutex_t  mutex;
+    };
+}nlocker_t;
+
+net_err_t nlocker_init (nlocker_t * locker, nlocker_type_t type);
+void nlocker_destory(nlocker_t * locker);
+void nlocker_lcok(nlocker_t * locker);
+void nlcoker_unlock(nlocker_t * locker);
+
+
+
+
+
+
+#endif //NET_NLOCKER_H

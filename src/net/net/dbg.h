@@ -4,6 +4,7 @@
 
 #ifndef NET_DBG_H
 #define NET_DBG_H
+#include "net_cft.h"
 
 #define DBG_STYLE_ERROR "\033[31m"
 #define DBG_STYLE_WARNING "\033[33m"
